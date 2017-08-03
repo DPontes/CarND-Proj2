@@ -67,7 +67,8 @@ My final model consisted of the following layers:
 |	RELU				| dropout 0.6									|
 | Fully connected		| outputs 43  									|
 | Softmax				| tf.nn.softmax_cross_entropy_with_logits()     |
- 
+
+
 #### 3.3 Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
 To train the model, I used the adam optimizer. Total epochs is 20 with batch size equals to 128. 
@@ -83,15 +84,17 @@ My final model results were:
 
 The LeNet model was choosen as a starting point for traffic sign classification bacause of its simplicity and proven effectiveness in classification of images that have similarities. The convolution layer can extract features and the fully connected layers can be trained to properly make decisions.
 
+The original architecture that was used was based on the network model presented in the "LeNet implementation" chapter. The only changes made initially were to the output values so that they would reflect the number of classes in the network, 43.
+
 The original architecture does not include dropout which is effective in reducing overfitting. Thus, I have added dropout to fully connected layer which turned out to be effective. I also tuned hyperparameters of feature extraction layers.
 
 I have tried all three pre-processing methods. The best one turned out to be normalization. Normalized grayscalling is the second best method.
 
 Also, I adjusted the epochs to reduce both underfitting and overfitting. I tunned the learning rate and found out that 0.005 to 0.001 yield very good results.
 
-### 5. Test a Model on New Images
+### 4. Test a Model on New Images
 
-#### 5.1 Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
+#### 4.1 Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
 Here are the first five German traffic signs that I found on the web:
 
@@ -99,7 +102,7 @@ Here are the first five German traffic signs that I found on the web:
 
 These images might be difficult to classify because of low resolution，lighting conditions (e.g. low-contrast), stickers, sun glare and viewpoint variations.
 
-#### 5.2 Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set.
+#### 4.2 Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set.
 
 Here are the results of the prediction:
 
@@ -114,7 +117,7 @@ Here are the results of the prediction:
 
 The model was able to correctly predicted 5 of the 5 traffic signs, which gives an accuracy of 100%. This compares favorably to the accuracy on the test set of 12630 images which is 92.8%.
 
-#### 5.3 Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability.
+#### 4.3 Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability.
 
 For all five images, the model is very certain about classification (probability > 99.99% for image 1,2,4 and 5). For the third image, the classifier is a bit less certain (probability of 98.2%) that the image is roundabout mandatory probably because of the stickers.
 
@@ -172,6 +175,6 @@ The Fifth Image
 
 It is interesting to know that the second image is the easiest one to classifiy and the third image is the most difficult one.
 
-### 6. Conclusions
+### 5. Conclusions
 
 The model architecture based on LeNet was proven to be effective in classifing real-world traffic signs. The most effective modifications of the model are normalizing input images and adding dropout to the fully connected layers. The prediction accuracy is 98.4% on the validation set and 92.8% on the test set.
