@@ -94,6 +94,4 @@ Also, I adjusted the epochs to reduce both underfitting and overfitting. I tunne
 #### 5.1 Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
 
-I was able to find 
-
 These images might be difficult to classify because of low resolution，lighting conditions (e.g. low-contrast), stickers, sun glare and viewpoint variations.
