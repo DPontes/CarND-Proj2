@@ -37,6 +37,18 @@ The Pandas library was used to calculate summary statistics of the traffic signs
 
 For a random image, Image Index ID, Class ID, Sign Name, the shape of the image and the image itself are shown.
 
+Here is an exploratory visualization of the data set. It is a bar chart showing how each count of traffic sign in the train data.
+
+![train data](/data/train_data_exploration.png)
+
+And below is the chart of validation data
+
+![validation data](/data/valid_data_exploration.png)
+
+And below is the chart of the test data
+
+![test data](/data/test_data_exploration.png)
+
 ### 3. Design and Test a model Architecture
 
 #### 3.1 Describe how you preprocessed the data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique, Preprocessing refers to techniques such as converting to grayscale, normalization, etc.
