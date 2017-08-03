@@ -93,5 +93,85 @@ Also, I adjusted the epochs to reduce both underfitting and overfitting. I tunne
 
 #### 5.1 Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
+Here are the first five German traffic signs that I found on the web:
+
+![alt text](https://github.com/DPontes/CarND-Proj2/blob/master/Test_data_jpg/test_images.png "Traffic Sign Test Images")
 
 These images might be difficult to classify because of low resolution，lighting conditions (e.g. low-contrast), stickers, sun glare and viewpoint variations.
+
+#### 5.2 Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set.
+
+Here are the results of the prediction:
+
+| Image			                               |     Prediction	             				   | 
+|:--------------------------------------------:|:---------------------------------------------:| 
+| No passing for vehicles over 3.5 metric tons | No passing for vehicles over 3.5 metric tons  | 
+| Keep right     		                       | Keep right									   |
+| Roundabout mandatory                         | Roundabout mandatory		    			   |
+| End of speed limit (80km/h)	               | End of speed limit (80km/h)				   |
+| No passing		                           | No passing     							   |
+
+
+The model was able to correctly predicted 5 of the 5 traffic signs, which gives an accuracy of 100%. This compares favorably to the accuracy on the test set of 12630 images which is 92.8%.
+
+#### 5.3 Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability.
+
+For all five images, the model is very certain about classification (probability > 99.99% for image 1,2,4 and 5). For the third image, the classifier is a bit less certain (probability of 98.2%) that the image is roundabout mandatory probably because of the stickers.
+
+The following five tables shows the top five soft max probabilities for the five test images. The correct answer is in bold.
+
+The First Image
+
+| Probability         	|     Prediction	        				         | 
+|:---------------------:|:--------------------------------------------------:| 
+| 9.99981642e-01        | **No passing for vehicles over 3.5 metric tons**   | 
+| 1.53403034e-05    	| No passing 									     |
+| 1.55594182e-06	    | Slippery road 		                             |
+| 1.00069497e-06	    | Speed limit (80km/h)							     |
+| 2.67203291e-07		| End of no passing by vehicles over 3.5 metric tons |
+
+The Second Image
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| 1.00000000e+00        | **Keep right**   								| 
+| 6.32613130e-14	    | Turn left ahead					    	    |
+| 1.24744321e-15 		| Dangerous curve to the right					|
+| 7.79721125e-19		| Go straight or right				 			|
+| 2.58768834e-20	    | Roundabout mandatory   						|
+
+The Third Image 
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| 9.82176661e-01		| **Roundabout mandatory**   					| 
+| 1.78229362e-02		| Go straight or left					        |
+| 3.60211232e-07 		| Keep left						                |
+| 4.02539868e-08		| Turn right ahead	 				            |
+| 3.73161324e-09	    | Speed limit (70km/h)					        |
+
+The Fourth Image
+
+| Probability         	|     Prediction	        					     | 
+|:---------------------:|:--------------------------------------------------:| 
+| 9.99999881e-01		| **End of speed limit (80km/h)**					 | 
+| 7.47210436e-08		| End of no passing by vehicles over 3.5 metric tons |
+| 8.57244054e-10		| End of all speed and passing limits				 |
+| 5.72543957e-10		| Speed limit (80km/h)		 				         |
+| 4.39701164e-10	    | Speed limit (60km/h)			                     |
+
+The Fifth Image 
+
+| Probability         	|     Prediction	        					    | 
+|:---------------------:|:-------------------------------------------------:| 
+| 9.99966145e-01		| **No passing**   								    | 
+| 2.27319415e-05		| No passing for vehicles over 3.5 metric tons	    |
+| 1.10898891e-05		| Vehicles over 3.5 metric tons prohibited		    |
+| 2.15331308e-09		| End of no passing by vehicles over 3.5 metric tons|
+| 1.72190950e-09	    | End of no passing 							    |
+
+It is interesting to know that the second image is the easiest one to classifiy and the third image is the most difficult one.
+
+### 6. Conclusions
+
+The model architecture based on LeNet was proven to be effective in classifing real-world traffic signs. The most effective modifications of the model are normalizing input images and adding dropout to the fully connected layers. The prediction accuracy is 98.4% on the validation set and 92.8% on the test set.
